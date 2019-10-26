@@ -1,2 +1,2 @@
-# CORDIC_fixedpt
-Fixed-point arithmetic c-library based on CORDIC
+# CORDIC_trigonometric_hyperbolic_library
+Efficient c-library of trigonometric, and hyperbolic functions based on CORDIC algorithm
