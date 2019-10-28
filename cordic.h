@@ -17,8 +17,23 @@
 #ifndef __CORDIC_H__
 #define __CORDIC_H__
 
-#include <floatpt/realtype.h>
-//#include "realtype.h"
+#include <float.h>
+#include <math.h>
+
+#if 1
+typedef float real_t;
+#define REAL_EPSILON FLT_EPSILON
+#define USE_FLOAT_AS_REAL
+#define ABS(x) fabsf(x)
+#else
+typedef double real_t;
+#define REAL_EPSILON DBL_EPSILON
+#define USE_DOUBLE_AS_REAL
+#define ABS(x) fabs(x)
+#endif
+
+#define SGN(x) ((x) < 0 ? -1 : ((x) > 0 ? 1 : 0))
+#define MIN(x, y) ((x) > (y) ? (y) : (x))
 
 #ifdef __cplusplus
 extern "C" {

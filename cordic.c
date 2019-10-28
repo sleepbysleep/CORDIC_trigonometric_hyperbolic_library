@@ -23,13 +23,7 @@
 #include <assert.h>
 #include <stdbool.h>
 
-#include <common.h>
-#include <floatpt/realtype.h>
-#include <floatpt/CORDIC.h>
-//#include "../common.h"
-//#define USE_DOUBLE_AS_REAL
-//#include "realtype.h"
-//#include "CORDIC.h"
+#include "cordic.h"
 
 #ifdef USE_FLOAT_AS_REAL
 
@@ -886,7 +880,7 @@ real_t CORDIC_sqrt(real_t v, int iteration)
   return x / (real_t)(1UL << ((E+1)/2));
 }
 
-#if 0
+#if 1
 #include <time.h>
 #include <stdlib.h>
 #include <inttypes.h>
@@ -975,7 +969,7 @@ real_t CORDIC_sqrt(real_t v, int iteration)
     printf(" atanh(%.8e) = %.8e goes to %.8e.\n", x, atanh(x), y);
 
     x = randfrom(INT32_MIN, INT32_MAX);
-    Y = randfrom(0, ABS(x));
+    y = randfrom(0, ABS(x));
     z = CORDIC_atanh2(y, x, n);
     printf("CORDIC_atanh2 in iteration(%d).\n", n);
     printf(" atanh2(%.8e, %.8e) = %.8e goes to %.8e.\n", y, x, atanh(y/x), z);

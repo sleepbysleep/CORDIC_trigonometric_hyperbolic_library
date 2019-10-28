@@ -1,2 +1,90 @@
 # CORDIC_trigonometric_hyperbolic_library
 Efficient c-library of trigonometric, and hyperbolic functions based on CORDIC algorithm
+
+# Compilation, and test
+<pre><code>$ gcc -o cordic cordic.c -lm
+$ ./cordic </code></pre>
+
+# Output
+<pre><code>=== Test of CORDIC in linear mode ===
+CORDIC_multiply in iteration (20):
+ 1.01440179e+09 * 9.86280448e+08 = 1.00048466e+18 goes to 1.00048521e+18
+CORDIC_divide in iteration (20):
+ -6.42344832e+08 / 1.48959334e+09 = -4.31221604e-01 goes to -4.31222916e-01
+=== End of the test of CORDIC in linear mode ===
+7.853981852531433105e-01,
+4.636476039886474609e-01,
+2.449786663055419922e-01,
+1.243549957871437073e-01,
+6.241881102323532104e-02,
+3.123983368277549744e-02,
+1.562372874468564987e-02,
+7.812341209501028061e-03,
+3.906230209395289421e-03,
+1.953122555278241634e-03,
+9.765622089616954327e-04,
+4.882812208961695433e-04,
+2.441406250000000000e-04
+Further things are meaningless due to having a value divided by 2 of the last.
+7.071067690849304199e-01,
+6.324555277824401855e-01,
+6.135720014572143555e-01,
+6.088339090347290039e-01,
+6.076482534408569336e-01,
+6.073517799377441406e-01,
+6.072776317596435547e-01,
+6.072590947151184082e-01,
+6.072544455528259277e-01,
+6.072533130645751953e-01,
+6.072530150413513184e-01
+Further things are meaningless due to having the same value with the last.
+=== Test of CORDIC in circular mode ===
+CORDIC_compute_cos_and_sin in iteration(20).
+ (cos(2.96797323e+00), sin(2.96797323e+00) = (-9.84965970e-01, 1.72748480e-01) goes to (-9.84966338e-01, 1.72747582e-01).
+CORDIC_atan2 in iteration(20).
+ atan2(-6.42344832e+08, 9.86280448e+08) = -5.77274591e-01 goes to -5.77275932e-01.
+CORDIC_enorm2 in iteration(20).
+ enorm2(1.48959334e+09, 1.12780390e+09) = 1.86837633e+09 goes to 1.86837645e+09.
+=== End of the test of CORDIC in circular mode ===
+5.493061542510986328e-01,
+2.554128170013427734e-01,
+1.256572157144546509e-01,
+6.258156895637512207e-02,
+3.126017749309539795e-02,
+1.562627218663692474e-02,
+7.812659256160259247e-03,
+3.906270023435354233e-03,
+1.953127561137080193e-03,
+9.765628492459654808e-04,
+4.882813082076609135e-04,
+2.441406250000000000e-04
+Further things are meaningless due to having the value divided by 2 of the previous.
+
+1.154700517654418945e+00,
+1.192569613456726074e+00,
+1.201997160911560059e+00,
+1.204351663589477539e+00,
+1.204940199851989746e+00,
+1.205087304115295410e+00,
+1.205124139785766602e+00,
+1.205133318901062012e+00,
+1.205135583877563477e+00,
+1.205136179924011230e+00,
+1.205136299133300781e+00
+Further things are meaningless due to having the same value with the last.
+
+=== Test of CORDIC in hyperbolic mode ===
+CORDIC_compute_cosh_and_sinh in iteration(20).
+ (cosh(5.75767517e+00), sinh(5.75767517e+00)) = (1.58307282e+02, 1.58304123e+02) goes to (1.57994644e+02, 1.57997787e+02).
+CORDIC_exp in iteration(20).
+ exp(1.03732109e+01) = 3.19910325e+04 goes to 3.19285078e+04.
+CORDIC_atanh in iteration(20).
+ atanh(-2.99085200e-01) = -3.08514632e-01 goes to -3.08515340e-01.
+CORDIC_atanh2 in iteration(20).
+ atanh2(1.13594496e+09, 1.48959334e+09) = 1.00236907e+00 goes to 1.00236821e+00.
+CORDIC_ln in iteration(20).
+ ln(2.08029424e+08) = 1.91531901e+01 goes to 1.91531887e+01.
+CORDIC_sqrt in iteration(20).
+ sqrt(8.67791616e+08) = 2.94583030e+04 goes to 2.94007148e+04.
+=== End of the test of CORDIC in hyperbolic mode ===
+</code></pre>
